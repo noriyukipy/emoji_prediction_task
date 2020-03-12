@@ -1,0 +1,5 @@
+.ipynb_checkpoints
+model/fasttext/output/*
+model/fasttext/data/*
+data/output/*
+data/*.json
