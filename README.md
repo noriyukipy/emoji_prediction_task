@@ -12,12 +12,15 @@ Twitter
 
 ### 評価指標
 
-- Precision (Top-1, 5)
+- Top-5 accuracy
+- Top-1 accuracy
 
 ## 準備
 
 ```sh
+$ cd docker
 $ docker image build -t jupyter ./
+$ cd ..
 ```
 
 Jupyter notebookの起動
@@ -38,7 +41,7 @@ $ docker container run -v $(pwd):/work --rm jupyter papermill dataset.ipynb outp
 
 ```sh
 $ cd model/fasttext
-$ docker container run -v $(pwd):/work --rm jupyter papermill emoji_fasttext.ipynb output/output.ipyn
+$ docker container run -v $(pwd):/work --rm jupyter papermill emoji_fasttext.ipynb output/output.ipynb
 ```
 
 ### BERTモデルの学習
@@ -47,7 +50,10 @@ $ docker container run -v $(pwd):/work --rm jupyter papermill emoji_fasttext.ipy
 
 
 ```sh
+$ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.ipynb output/bert-tune_layer_classifier.ipynb -p data_dir data -p tune_layer classifier -p name bert-tune_layer_classifier
 $ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.ipynb output/bert-tune_layer_last_and_classifier.ipynb -p data_dir data -p tune_layer last_and_classifier -p name bert-tune_layer_last_and_classifier
+$ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.ipynb output/bert-tune_layer_all.ipynb -p data_dir data -p tune_layer all -p name bert-tune_layer_all
+$ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.ipynb output/bert-tune_layer_all-warmup_rate_0.ipynb -p data_dir data -p tune_layer all -p warmup_rate 0 -p name bert-tune_layer_all-warmup_rate_0
 ```
 
 TensorBoardで結果を見る
