@@ -6,4 +6,4 @@ RUN apt-get update && \
 ENV LC_ALL=ja_JP.UTF-8
 
 WORKDIR /work
-RUN pip install jupyter==1.0.0 tensorboardX==2.0 papermill==2.0.0
+RUN pip install jupyter==1.0.0 tensorboardX==2.0 papermill==1.2.1
