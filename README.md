@@ -29,6 +29,12 @@ Jupyter notebookの起動
 $ docker container run -v $(pwd):/work -p 8888:8888 --rm jupyter jupyter notebook --ip 0.0.0.0 --allow-root
 ```
 
+TensorBoardで結果を見る
+
+```sh
+$ docker container run -v $(pwd):/work -p 6006:6006 --rm -it jupyter bash -c 'pip install tensorboard && tensorboard --logdir runs --host=0.0.0.0'
+```
+
 ## 実行
 
 学習データセットの作成
@@ -56,8 +62,10 @@ $ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.i
 $ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.ipynb output/bert-tune_layer_all-warmup_rate_0.ipynb -p data_dir data -p tune_layer all -p warmup_rate 0 -p name bert-tune_layer_all-warmup_rate_0
 ```
 
-TensorBoardで結果を見る
+
+### LSTM モデルの学習
 
 ```sh
-$ docker container run -v $(pwd):/work -p 6006:6006 --rm -it jupyter bash -c 'pip install tensorboard && tensorboard --logdir runs --host=0.0.0.0'
+$ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.ipynb output/lstm.ipynb -p data_dir "./data/" -p name lstm
 ```
+
