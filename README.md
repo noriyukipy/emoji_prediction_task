@@ -84,4 +84,4 @@ $ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.i
 | bert-tune_layer_classifier | BERT | 0.0569 | 0.1774 | model/bert/output/bert-tune_layer_classifier.ipynb |
 | bert-tune_layer_last_and_classifier | BERT | 0.1456 | 0.3518 | model/bert/output/bert-tune_layer_last_and_classifier.ipynb |
 | bert-tune_layer_all | BERT | 0.1441 | 0.3547 | model/bert/output/bert-tune_layer_all.ipynb |
-| bert-tune_layer_all-warmup_rate_0 | BERT | | | |
+| bert-tune_layer_all-warmup_rate_0 | BERT | 0.1466 | 0.3584 | model/bert/output/bert-tune_layer_all-warmup_rate_0.ipynb |
