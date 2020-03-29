@@ -1,7 +1,9 @@
 .ipynb_checkpoints
-model/fasttext/output/*
-model/fasttext/data/*
-model/bert/data/
+model/fasttext/output
+model/fasttext/data
+model/bert/output
+model/bert/data
 model/lstm/output
+model/lstm/data
 data/output/*
 data/*.json
