@@ -77,10 +77,10 @@ $ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.i
 | Name | Model | Top-1 acc | Top-5 acc | notebook |
 | --- | --- | --- | --- | --- |
 | fastText | fastText | 0.1286 | 0.3204 | model/fasttext/output.ipynb |
-| lstm | LSTM | 0.1225 | 0.3078 | model/lstm/output/lstm.ipynb |
-| lstm-bidirectional_True | LSTM | | | |
-| lstm-num_layers_2 | LSTM | | | |
-| lstm-num_layers_2-bidirectional_True | LSTM | | | |
+| lstm | LSTM | 0.1345 | 0.3276 | model/lstm/output/lstm.ipynb |
+| lstm-bidirectional_True | LSTM | 0.1331 | 0.3279 | model/lstm/output/lstm-bidirectional_True.ipynb |
+| lstm-num_layers_2 | LSTM | 0.1431 | 0.3434 | model/lstm/output/lstm-num_layers_2.ipynb |
+| lstm-num_layers_2-bidirectional_True | LSTM | 0.1436 | 0.3443 | model/lstm/output/lstm-num_layers_2-bidirectional_True.ipynb |
 | bert-tune_layer_classifier | BERT | 0.0569 | 0.1774 | model/bert/output/bert-tune_layer_classifier.ipynb |
 | bert-tune_layer_last_and_classifier | BERT | 0.1456 | 0.3518 | model/bert/output/bert-tune_layer_last_and_classifier.ipynb |
 | bert-tune_layer_all | BERT | 0.1441 | 0.3547 | model/bert/output/bert-tune_layer_all.ipynb |
