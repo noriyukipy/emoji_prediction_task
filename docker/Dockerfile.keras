@@ -1,0 +1,6 @@
+FROM tensorflow/tensorflow:2.1.0-gpu-py3
+
+RUN apt-get update && \
+    apt-get install -y wget unzip language-pack-ja mecab libmecab-dev mecab-ipadic-utf8 jq
+
+RUN pip install keras==2.3.1 jupyter==1.0.0 tensorboard==2.1.1 papermill==1.2.1

@@ -18,7 +18,8 @@ Twitter
 
 ```sh
 $ cd docker
-$ docker image build -t jupyter ./
+$ docker image build -t jupyter -f Dockerfile .
+$ docker image build -t keras -f Dockerfile.keras .
 $ cd ..
 ```
 
