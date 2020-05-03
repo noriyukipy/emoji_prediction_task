@@ -3,3 +3,4 @@ model/*/output
 model/*/data*
 data/output/*
 data/*.json
+model/keras/*/output
