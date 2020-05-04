@@ -26,13 +26,13 @@ $ cd ..
 Jupyter notebookの起動
 
 ```sh
-$ docker container run -v $(pwd):/work -p 8888:8888 --rm jupyter jupyter notebook --ip 0.0.0.0 --allow-root
+$ docker container run -v $(pwd):/work -p 8888:8888 --rm keras jupyter notebook --ip 0.0.0.0 --allow-root
 ```
 
 TensorBoardで結果を見る
 
 ```sh
-$ docker container run -v $(pwd):/work -p 6006:6006 --rm -it jupyter bash -c 'pip install tensorboard && tensorboard --logdir runs --host=0.0.0.0'
+$ docker container run -v $(pwd):/work -w /work -p 6006:6006 --rm -it keras tensorboard --logdir . --host=0.0.0.0
 ```
 
 ## 実行
@@ -86,3 +86,14 @@ $ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.i
 | bert-tune_layer_last_and_classifier | BERT | 0.1456 | 0.3518 | model/bert/output/bert-tune_layer_last_and_classifier.ipynb |
 | bert-tune_layer_all | BERT | 0.1441 | 0.3547 | model/bert/output/bert-tune_layer_all.ipynb |
 | bert-tune_layer_all-warmup_rate_0 | BERT | 0.1466 | 0.3584 | model/bert/output/bert-tune_layer_all-warmup_rate_0.ipynb |
+
+## Keras
+
+```sh
+docker container run -v $(pwd):/work -w /work --gpus all --rm keras papermill model/keras/embedding_flatten_model/model.ipynb model/keras/embedding_flatten_model/output/output.ipynb -p output_dir model/keras/embedding_flatten_model/output -p data_dir data/output
+```
+
+### TODO
+
+- Process unknow word
+- Save vocabulary
