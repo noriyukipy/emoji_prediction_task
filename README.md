@@ -48,7 +48,8 @@ $ cd ..
 Jupyter notebookの起動
 
 ```sh
-$ docker container run -v $(pwd):/work -p 8888:8888 --rm keras jupyter notebook --ip 0.0.0.0 --allow-root
+$ docker container run -v $(pwd):/work -w /work -p 8888:8888 --rm keras jupyter notebook --ip 0.0.0.0 --allow-root
+
 ```
 
 TensorBoardで結果を見る
@@ -118,4 +119,3 @@ docker container run -v $(pwd):/work -w /work --gpus all --rm keras papermill mo
 ### TODO
 
 - Process unknow word
-- Save vocabulary
