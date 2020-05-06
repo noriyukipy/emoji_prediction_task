@@ -113,7 +113,7 @@ $ docker container run -v $(pwd):/work --gpus all --rm jupyter papermill model.i
 ## Keras
 
 ```sh
-docker container run -v $(pwd):/work -w /work --gpus all --rm keras papermill model/keras/embedding_flatten_model/model.ipynb model/keras/embedding_flatten_model/output/output.ipynb -p output_dir model/keras/embedding_flatten_model/output -p data_dir data/output
+$ docker container run -v $(pwd):/work -w /work --rm keras papermill --log-level WARNING model/keras/embedding_flatten_model/model.ipynb model/keras/embedding_flatten_model/output/output.ipynb -f model/keras/embedding_flatten_model/params.yaml
 ```
 
 ### TODO
