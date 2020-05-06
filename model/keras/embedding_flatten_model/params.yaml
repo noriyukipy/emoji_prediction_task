@@ -1,0 +1,9 @@
+_params:
+    data_dir: data/output
+    output_dir: model/keras/embedding_flatten_model/output
+    num_words: 500
+    embedding_size: 100
+    batch_size: 32
+    input_length: 50
+    num_epochs: 10
+    seed: 1234
